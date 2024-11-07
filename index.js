@@ -6,7 +6,7 @@ const account = {
         console.log(`Your current balance is ${this.balance}:-`);
     },
     deposit(){
-        amount = parseFloat(prompt("How much money do you want to deposit?"));
+        let amount = parseFloat(prompt("How much money do you want to deposit?"));
 
         if(isNaN(amount) || (amount < 0)){
             this.accountError("Amount is a negative number or not a number");
@@ -18,7 +18,7 @@ const account = {
             }
     },  
     withdrawal(){
-        amount = parseFloat(prompt("How much money do you want to withdraw?"));
+        let amount = parseFloat(prompt("How much money do you want to withdraw?"));
 
         if(isNaN(amount) || (amount < 0)){
             this.accountError("Amount is a negative number or not a number"); 
@@ -62,5 +62,41 @@ function getTransactionTime(){
 function addZero(num){
     num < 10 ? num = "0" + num : num = num;
     return num;
-    
 }
+
+function atm(){
+    const message = parseFloat(
+        prompt(
+            `Select a choice:
+            1.) See balance.
+            2.) Make a deposit.
+            3.) Make a withdrawal.
+            4.) Get Account name.
+            5.) See transactions.
+            6.) Exit.`
+        )
+    );
+
+    switch (message) {
+        case 1: account.getBalance();
+                atm();
+                break;
+        case 2: account.deposit();
+                atm();
+                break;
+        case 3: account.withdrawal()
+                atm();
+                break;
+        case 4: account.getAccountName();
+                atm();
+                break;
+        case 5: account.getTransactions();
+                atm();
+                break;
+        case 6: 
+                break;
+        default: console.log ("ERROR");
+                 atm();
+    }   
+}
+
