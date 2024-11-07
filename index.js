@@ -96,7 +96,7 @@ function atm(){
                 break;
         case 6: //exit the atm-function.
                 break;
-        default: console.log ("ERROR");
+        default: console.log (`ERROR: can't use ${message} as input.`);
                  atm();
     }   
 }
