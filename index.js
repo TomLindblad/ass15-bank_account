@@ -41,7 +41,7 @@ const account = {
     accountError(errorType){
         console.log(`Error: ${errorType}`);
     },
-    exitAccount(){
+    exitAccount(){  //Closes the tab aka exit the HTML atm. 
         window.close();
     }
 }
@@ -64,6 +64,7 @@ function addZero(num){
     return num;
 }
 
+    //the atm-function
 function atm(){
     const message = parseFloat(
         prompt(
@@ -93,7 +94,7 @@ function atm(){
         case 5: account.getTransactions();
                 atm();
                 break;
-        case 6: 
+        case 6: //exit the atm-function.
                 break;
         default: console.log ("ERROR");
                  atm();
